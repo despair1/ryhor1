@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>{{player.name}}</title>
+	</head>
+	<body>
+		<p> Вы находитесь в {{player.location.name}}</p>
+		<p> можно пройти в 
+			{% for i in player.location.locs.all %}
+			<a href="{% url 'df:move' i.pk %}">{{i.name}}</a>
+				
+			{% endfor %}
+		{% if error_message %}
+			<p> {{error_message }} </p>
+		{% endif %}  
+		
+		<!-- <p>This is a test.</p> -->
+	</body>
+</html>
