@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Input name</title>
+	</head>
+	<body>
+		{% if error_message %}
+			<p> {{error_message }} </p>
+		{% endif %}  
+				
+		<form action="{% url 'df:init_user' %}" method="post">
+			{% csrf_token %}
+			Enter name: <input type="text" name="user">
+			<input type="submit" name="send_button" value="создать">
+		</form> 
+		<!-- <p>This is a test.</p> -->
+	</body>
+</html>

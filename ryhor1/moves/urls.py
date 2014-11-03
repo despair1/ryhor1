@@ -12,8 +12,10 @@ from new_views.item import inspect_item
 from new_views.item_get import get_item
 from new_views.setup_user import setup_user
 from new_views.item_drop import drop_item
+from new_views.init_user import init_user
 urlpatterns=(#url(r"^$",views.index,name="index"),
              url(r"^init/",init, name="init"),
+             url(r"^init_user/",init_user, name="init_user"),
              url(r"^$",setup_user, name="setup"),
              url(r"^main/",main_screen, name="main"),
              url(r"^move/(?P<loc_id>[0-9]+)/",

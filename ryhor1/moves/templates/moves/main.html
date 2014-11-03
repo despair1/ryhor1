@@ -13,6 +13,11 @@
 			{% for i in player.location.items.all %}
 				<a href="{% url 'df:item' i.pk %}">{{i.name}}</a>
 			{% endfor %}
+			{% for i in player.location.entity.all %}
+				{% if player != i %}
+					{{i.name}}
+				{% endif %}
+			{% endfor %}
 		</p>
 			
 		<p> у вас в инвентаре :
