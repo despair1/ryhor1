@@ -9,14 +9,14 @@ from new_views.main_screen import main_screen
 from django.shortcuts import redirect
 def move(request,loc_id):
     player=entity.objects.get(name="player")
-    print loc_id
+    #print loc_id
     for i in player.location.locs.all():
         if int(i.pk) == int(loc_id) :
             player.location=i
             player.save()
-            print "in if"
+            #print "in if"
             break
-        print i.pk
+        #print i.pk
     return redirect("df:main")
     return HttpResponse("you in move ")
     

@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>item </title>
+	</head>
+	<body>
+		<p> перед вами {{item.name}} </p>
+		{% if item.get %}
+			<a href="{% url 'df:item_get' item.pk %}"> взять </a>
+		{% endif %}
+		{% if item.drop %}
+			<a href="{% url 'df:item_drop' item.pk %}"> выбросить </a>
+		{% endif %}
+		
+		{% if error_message %}
+			<p> {{error_message }} </p>
+		{% endif %}  
+		
+		<!-- <p>This is a test.</p> -->
+	</body>
+</html>

@@ -8,7 +8,18 @@
 			{% for i in player.location.locs.all %}
 			<a href="{% url 'df:move' i.pk %}">{{i.name}}</a>
 				
+			{% endfor %} </p>
+		<p> перед собой вы видите
+			{% for i in player.location.items.all %}
+				<a href="{% url 'df:item' i.pk %}">{{i.name}}</a>
 			{% endfor %}
+		</p>
+			
+		<p> у вас в инвентаре :
+			{% for i in player.items.all %}
+				<a href="{% url 'df:item' i.pk %}">{{i.name}}</a>
+			{% endfor %}
+		</p>
 		{% if error_message %}
 			<p> {{error_message }} </p>
 		{% endif %}  

@@ -10,3 +10,7 @@ class entity(models.Model):
     type = models.CharField(max_length=30)
     location = models.ForeignKey(locations,related_name="entity")
     
+class items(models.Model):
+    name = models.CharField(max_length=30)
+    location = models.ForeignKey(locations,related_name='items',null=True)
+    entity = models.ForeignKey(entity,related_name='items',null=True)
